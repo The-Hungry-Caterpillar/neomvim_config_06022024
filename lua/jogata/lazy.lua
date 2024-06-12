@@ -60,6 +60,9 @@ require("lazy").setup({
         }
     },
 
+    {
+        'm4xshen/autoclose.nvim'
+    },
 
 	-- r plugins
 	{
@@ -85,28 +88,17 @@ require("lazy").setup({
 
 	-- color themes
 
-	{ 
-		"rose-pine/neovim",
-		name = "rose-pine"
-	},
-
-    {
-        "olimorris/onedarkpro.nvim"
-    },
-
-    {
-        "tiagovla/tokyodark.nvim"
-    },
-    
-    {
-        "sainnhe/gruvbox-material"
-    },
-
     {
         "rebelot/kanagawa.nvim"
+    },
+
+    {
+        "Shatur/neovim-ayu"
+    },
+
+    {
+        "catppuccin/nvim"
     }
-
-
 
 
 })

@@ -1,8 +1,3 @@
 require("jogata.set")
 require("jogata.remap")
 require("jogata.lazy")
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd('colorscheme gruvbox-material')
--- vim.cmd('colorscheme onedark')
--- vim.cmd('colorscheme tokyodark')
-vim.cmd('colorscheme kanagawa')
