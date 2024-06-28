@@ -1,5 +1,6 @@
 -- Change leader key to comma
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Fat cursor
 vim.opt.guicursor = ""
@@ -13,6 +14,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.g.r_indent_align_args = 0
 
 vim.opt.wrap = true
 

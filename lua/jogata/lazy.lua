@@ -13,9 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-
 	-- essential plugins
-
 	{ 
 		"nvim-telescope/telescope.nvim",
 		dependencies = { 'nvim-lua/plenary.nvim' }
@@ -31,15 +29,12 @@ require("lazy").setup({
 		lazy = false
 	},
 
-	{
-		'mbbill/undotree',
-		lazy = false
-	},
-
-	{
-		'tpope/vim-fugitive',
-		lazy = false
-	},
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("ibl").setup()
+        end
+    },
     
     {
         'nvim-tree/nvim-tree.lua',
@@ -48,21 +43,39 @@ require("lazy").setup({
     },
 
     {
-        'stevearc/dressing.nvim'
-    },
-
-    {
-        'lukas-reineke/indent-blankline.nvim',
-        main = 'ibl',
-        event = { 'BufReadPre', 'BufNewFile'},
-        opts = {
-            indent = { char = "|" }
-        }
+        "HiPhish/rainbow-delimiters.nvim"
     },
 
     {
         'm4xshen/autoclose.nvim'
     },
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    {
+        "chentoast/marks.nvim"
+    },
+
+    -- {
+    --     "karb94/neoscroll.nvim"
+    -- },
+
+	-- {
+	-- 	'mbbill/undotree',
+	-- 	lazy = false
+	-- },
+
+	-- {
+	-- 	'tpope/vim-fugitive',
+	-- 	lazy = false
+	-- },
+
+    -- {
+    --     'stevearc/dressing.nvim'
+    -- },
 
 	-- r plugins
 	{
@@ -85,20 +98,36 @@ require("lazy").setup({
 		end,
 	},
 
-
 	-- color themes
 
+    -- {
+    --     "rebelot/kanagawa.nvim"
+    -- },
+    --
+    -- {
+    --     "Shatur/neovim-ayu"
+    -- },
+    --
+    -- {
+    --     "sainnhe/gruvbox-material"
+    -- },
+    --
+    
     {
-        "rebelot/kanagawa.nvim"
+        "Mofiqul/dracula.nvim"
     },
 
     {
-        "Shatur/neovim-ayu"
+        "Tsuzat/NeoSolarized.nvim"
     },
 
     {
-        "catppuccin/nvim"
-    }
+        "loctvl842/monokai-pro.nvim"
+    },
+
+    -- {
+    --     "catppuccin/nvim"
+    -- }
 
 
 })
