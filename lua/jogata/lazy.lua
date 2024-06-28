@@ -55,10 +55,6 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
-    {
-        "chentoast/marks.nvim"
-    },
-
     -- {
     --     "karb94/neoscroll.nvim"
     -- },

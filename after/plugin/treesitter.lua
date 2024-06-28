@@ -1,5 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
+        "c",
+        "query",
 		"markdown",
 		"markdown_inline",
 		"r",
