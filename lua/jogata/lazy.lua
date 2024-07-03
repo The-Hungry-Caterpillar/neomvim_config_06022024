@@ -83,6 +83,28 @@ require("lazy").setup({
 		lazy = false,
         config = function()
             bracketed_paste = true
+            local opts = {
+                R_args = {"--quiet", "--no-save"},
+                hook = {
+                    on_filetype = function ()
+                        vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
+                        vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
+                    end
+                },
+                min_editor_width = 72,
+                rconsole_width = 80,
+                disable_cmds = {
+                    "RClearConsole",
+                    "RCustomStart",
+                    "RSPlot",
+                    "RSaveClose",
+                },
+            }
+            if vim.env.R_AUTO_START == "true" then
+                opts.auto_start = 1
+                opts.objbr_auto_start = true
+            end
+            require("r").setup(opts)
         end
 	},
 
@@ -120,6 +142,14 @@ require("lazy").setup({
     {
         "loctvl842/monokai-pro.nvim"
     },
+
+    {
+        "nyoom-engineering/oxocarbon.nvim"
+    },
+
+    {
+        "AlexvZyl/nordic.nvim"
+    }
 
     -- {
     --     "catppuccin/nvim"

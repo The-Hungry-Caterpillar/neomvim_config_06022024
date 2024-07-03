@@ -9,7 +9,8 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 		"lua",
 		"python",
-		"vim"
+		"vim",
+        "vimdoc"
 	},
 
 	auto_install = true,

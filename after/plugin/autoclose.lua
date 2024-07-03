@@ -4,7 +4,7 @@ require("autoclose").setup({
       ["{"] = { escape = true, close = true, pair = "{}", disabled_filetypes = {} },
       ["["] = { escape = true, close = true, pair = "[]", disabled_filetypes = {} },
       ["'"] = { escape = true, close = true, pair = "''", disabled_filetypes = {} },
-      ["'"] = { escape = true, close = true, pair = "``", disabled_filetypes = {} },
+      ["`"] = { escape = true, close = true, pair = "``", disabled_filetypes = {} },
       ['"'] = { escape = true, close = true, pair = '""', disabled_filetypes = {} }
    },
 })
