@@ -24,11 +24,6 @@ require("lazy").setup({
 		run = ":TSUpdate"
 	},
 
-	{
-		"theprimeagen/harpoon",
-		lazy = false
-	},
-
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
@@ -54,6 +49,31 @@ require("lazy").setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+
+    {
+        "karb94/neoscroll.nvim"
+    },
+
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+            -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+            -- animation = true,
+            -- insert_at_start = true,
+            -- …etc.
+        },
+    },
+
+	-- {
+	-- 	"theprimeagen/harpoon",
+	-- 	lazy = false
+	-- },
+
 
     -- {
     --     "karb94/neoscroll.nvim"
@@ -118,42 +138,38 @@ require("lazy").setup({
 
 	-- color themes
 
-    -- {
-    --     "rebelot/kanagawa.nvim"
-    -- },
-    --
-    -- {
-    --     "Shatur/neovim-ayu"
-    -- },
-    --
-    -- {
-    --     "sainnhe/gruvbox-material"
-    -- },
-    --
     
     {
         "Mofiqul/dracula.nvim"
     },
 
     {
-        "Tsuzat/NeoSolarized.nvim"
+        "folke/tokyonight.nvim",
     },
 
     {
-        "loctvl842/monokai-pro.nvim"
+        "Shatur/neovim-ayu"
     },
 
     {
-        "nyoom-engineering/oxocarbon.nvim"
+        "sainnhe/gruvbox-material"
     },
 
     {
-        "AlexvZyl/nordic.nvim"
+        "ofirgall/ofirkai.nvim"
+    },
+
+    {
+        "RRethy/base16-nvim"
     }
-
     -- {
     --     "catppuccin/nvim"
-    -- }
+    -- },
+    --
+    -- {
+    --     "rebelot/kanagawa.nvim"
+    -- },
+
 
 
 })
