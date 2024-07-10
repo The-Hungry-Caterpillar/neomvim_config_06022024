@@ -152,16 +152,13 @@ require("lazy").setup({
     },
 
     {
-        "sainnhe/gruvbox-material"
-    },
-
-    {
         "ofirgall/ofirkai.nvim"
     },
 
     {
-        "RRethy/base16-nvim"
+        "miversen33/sunglasses.nvim"
     }
+
     -- {
     --     "catppuccin/nvim"
     -- },
