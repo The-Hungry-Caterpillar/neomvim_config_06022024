@@ -1,4 +1,4 @@
 require("sunglasses").setup({
     filter_type = "SHADE",
-    filter_percent = .65
+    filter_percent = .15
 })

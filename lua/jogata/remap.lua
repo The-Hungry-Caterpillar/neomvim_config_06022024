@@ -42,3 +42,5 @@ vim.keymap.set("n", "<leader>l", ":bnext<CR>", { noremap = true})
 vim.keymap.set("n", "<leader>h", ":bprevious<CR>", { noremap = true})
 -- <leader>bd to delete buffer but not window
 vim.keymap.set("n", "<leader>d", ":<C-U>bprevious <bar> bdelete #<CR>")
+-- faster terminal exit
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

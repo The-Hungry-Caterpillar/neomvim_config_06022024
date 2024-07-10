@@ -69,15 +69,15 @@ require("lazy").setup({
         },
     },
 
+    {
+        "miversen33/sunglasses.nvim"
+    },
+
+
 	-- {
 	-- 	"theprimeagen/harpoon",
 	-- 	lazy = false
 	-- },
-
-
-    -- {
-    --     "karb94/neoscroll.nvim"
-    -- },
 
 	-- {
 	-- 	'mbbill/undotree',
@@ -102,8 +102,9 @@ require("lazy").setup({
 		"R-nvim/R.nvim",
 		lazy = false,
         config = function()
-            bracketed_paste = true
             local opts = {
+                bracketed_paste = true,
+                external_term = "tmux split-window -h -l 70",
                 R_args = {"--quiet", "--no-save"},
                 hook = {
                     on_filetype = function ()
@@ -154,10 +155,6 @@ require("lazy").setup({
     {
         "ofirgall/ofirkai.nvim"
     },
-
-    {
-        "miversen33/sunglasses.nvim"
-    }
 
     -- {
     --     "catppuccin/nvim"
