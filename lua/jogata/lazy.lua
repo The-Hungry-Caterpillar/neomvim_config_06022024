@@ -21,7 +21,8 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate"
+		run = ":TSUpdate",
+        lazy = true
 	},
 
     {
@@ -73,7 +74,6 @@ require("lazy").setup({
         "miversen33/sunglasses.nvim"
     },
 
-
 	-- {
 	-- 	"theprimeagen/harpoon",
 	-- 	lazy = false
@@ -104,7 +104,7 @@ require("lazy").setup({
         config = function()
             local opts = {
                 bracketed_paste = true,
-                external_term = "tmux split-window -h -l 70",
+                -- external_term = "tmux split-window -h -l 70",
                 R_args = {"--quiet", "--no-save"},
                 hook = {
                     on_filetype = function ()
@@ -138,7 +138,6 @@ require("lazy").setup({
 	},
 
 	-- color themes
-
     
     {
         "Mofiqul/dracula.nvim"
@@ -155,6 +154,10 @@ require("lazy").setup({
     {
         "ofirgall/ofirkai.nvim"
     },
+
+    {
+        "pappasam/papercolor-theme-slim"
+    }
 
     -- {
     --     "catppuccin/nvim"
