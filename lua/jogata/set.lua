@@ -26,7 +26,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 -- Always have 8 columns at bottom
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 15
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -35,5 +35,32 @@ vim.opt.updatetime = 50
 
 -- Column at 80 characters
 vim.opt.colorcolumn = "80"
+vim.lazyredraw = true
+
 
 vim.loader.disable()
+
+-- do
+--     -- register autocommand callacks to cleverly toggle
+--     -- relative numbers when scrolling, .. this works
+--     -- around the issue with frames dropped in neovide
+--     -- when scrolling quickly with relative numbering on
+--
+--     -- this autocommand turns relative numbering off when we begin to scroll
+--     vim.api.nvim_create_autocmd({ "WinScrolled" }, {
+--         callback = function(ev)
+--             if vim.o.relativenumber then
+--                 vim.cmd('set relativenumber norelativenumber')
+--             end
+--         end
+--     })
+--
+--     -- this autocommand turns relative numberin on when we have idled (stopped scrolling)
+--     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI"}, {
+--         callback = function(ev)
+--             if not vim.o.relativenumber then
+--                 vim.cmd('set relativenumber relativenumber')
+--             end
+--         end
+--     })
+-- end

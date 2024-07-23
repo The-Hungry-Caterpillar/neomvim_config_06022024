@@ -71,8 +71,15 @@ require("lazy").setup({
     },
 
     {
-        "miversen33/sunglasses.nvim"
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end
     },
+
+    -- {
+    --     "miversen33/sunglasses.nvim"
+    -- },
 
 	-- {
 	-- 	"theprimeagen/harpoon",
@@ -112,8 +119,13 @@ require("lazy").setup({
                         vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
                     end
                 },
-                min_editor_width = 72,
-                rconsole_width = 80,
+                -- -- for vertical split
+                -- min_editor_width = 72,
+                -- rconsole_width = 70,
+                -- for horizontal split
+                rconsole_width = 0,
+                rconsole_height = 20,
+                nosplitbelow = true, -- rconsole above
                 disable_cmds = {
                     "RClearConsole",
                     "RCustomStart",
@@ -138,6 +150,14 @@ require("lazy").setup({
 	},
 
 	-- color themes
+
+    -- {
+    --     "iagorrr/noctis-high-contrast.nvim"
+    -- },
+
+    {
+        "nyoom-engineering/oxocarbon.nvim"
+    },
     
     {
         "Mofiqul/dracula.nvim"
@@ -152,11 +172,16 @@ require("lazy").setup({
     },
 
     {
-        "ofirgall/ofirkai.nvim"
+        "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = false
+        },
     },
-
+    
     {
-        "pappasam/papercolor-theme-slim"
+        "navarasu/onedark.nvim"
     }
 
     -- {
