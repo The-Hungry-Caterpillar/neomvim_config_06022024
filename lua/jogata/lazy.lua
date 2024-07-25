@@ -39,6 +39,15 @@ require("lazy").setup({
     },
 
     {
+        "ggandor/leap.nvim",
+        config = function()
+            local leap = require('leap')
+            leap.add_default_mappings()
+            leap.opts.case_sensitive = true
+        end
+    },
+
+    {
         "HiPhish/rainbow-delimiters.nvim"
     },
 
@@ -56,6 +65,26 @@ require("lazy").setup({
     },
 
     {
+        "kdheepak/lazygit.nvim",
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        },
+    },
+
+    {
         'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -64,7 +93,7 @@ require("lazy").setup({
         init = function() vim.g.barbar_auto_setup = false end,
         opts = {
             -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-            -- animation = true,
+            animation = true,
             -- insert_at_start = true,
             -- …etc.
         },
@@ -125,7 +154,6 @@ require("lazy").setup({
                 -- for horizontal split
                 rconsole_width = 0,
                 rconsole_height = 20,
-                nosplitbelow = true, -- rconsole above
                 disable_cmds = {
                     "RClearConsole",
                     "RCustomStart",
@@ -151,9 +179,13 @@ require("lazy").setup({
 
 	-- color themes
 
-    -- {
-    --     "iagorrr/noctis-high-contrast.nvim"
-    -- },
+    {
+        "slugbyte/lackluster.nvim"
+    },
+
+    {
+        "bluz71/vim-moonfly-colors"
+    },
 
     {
         "nyoom-engineering/oxocarbon.nvim"
