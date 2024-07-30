@@ -24,18 +24,57 @@ require("lazy").setup({
 		run = ":TSUpdate",
         lazy = true
 	},
-
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("ibl").setup()
-        end
-    },
     
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         lazy = false
+    },
+
+    {
+        "mikavilpas/yazi.nvim",
+        event = "VeryLazy",
+        keys = {
+            -- 👇 in this section, choose your own keymappings!
+            {
+                "<leader>-",
+                function()
+                    require("yazi").yazi()
+                end,
+                desc = "Open the file manager",
+            },
+            {
+                -- Open in the current working directory
+                "<leader>cw",
+                function()
+                    require("yazi").yazi(nil, vim.fn.getcwd())
+                end,
+                desc = "Open the file manager in nvim's working directory" ,
+            },
+        },
+        opts = {
+            -- if you want to open yazi instead of netrw, see below for more info
+            open_for_directories = false,
+
+            -- enable these if you are using the latest version of yazi
+            -- use_ya_for_events_reading = true,
+            -- use_yazi_client_id_flag = true,
+
+            keymaps = {
+                show_help = '<f1>',
+            },
+        },
+        config = function()
+            require("yazi").setup()
+        end
+    },
+
+
+    {
+        "nvimdev/indentmini.nvim",
+        config = function()
+            require("indentmini").setup()
+        end
     },
 
     {
@@ -138,9 +177,9 @@ require("lazy").setup({
 	-- 	lazy = false
 	-- },
 
-    -- {
-    --     'stevearc/dressing.nvim'
-    -- },
+    {
+        'stevearc/dressing.nvim'
+    },
 
 	-- r plugins
 	{
@@ -197,15 +236,11 @@ require("lazy").setup({
     },
 
     {
-        "bluz71/vim-moonfly-colors"
-    },
-
-    {
-        "nyoom-engineering/oxocarbon.nvim"
-    },
-    
-    {
-        "Mofiqul/dracula.nvim"
+        "Mofiqul/dracula.nvim",
+        opts = {
+            transparent_bg = true,
+            italic_comment = true
+        }
     },
 
     {
@@ -214,6 +249,26 @@ require("lazy").setup({
 
     {
         "Shatur/neovim-ayu"
+    },
+
+    {
+        "Everblush/nvim"
+    },
+
+    {
+        "diegoulloao/neofusion.nvim",
+        priority = 1000 ,
+        config = true,
+        opts = {
+            transparent_mode = true
+        }
+    },
+
+    {
+        "Mofiqul/vscode.nvim",
+        opts = {
+            transparent_background = true
+        }
     },
 
     {
@@ -236,16 +291,16 @@ require("lazy").setup({
     },
     
     {
-        "navarasu/onedark.nvim"
-    },
-
-    {
-        "catppuccin/nvim"
-    },
-
-    {
         "rebelot/kanagawa.nvim"
-    }
+    },
+
+    {
+        'maxmx03/solarized.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+        end,
+    },
 
 
 
